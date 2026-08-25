@@ -1,0 +1,22 @@
+[
+  {
+    "repository": "LineageOS/android_kernel_samsung_msm8974",
+    "target_path": "kernel/samsung/msm8974",
+    "branch": "lineage-15.1"
+  },
+  {
+    "repository": "LineageOS/android_hardware_samsung",
+    "target_path": "hardware/samsung",
+    "branch": "lineage-15.1"
+  },
+  {
+    "repository": "LineageOS/android_hardware_samsung_ril",
+    "target_path": "hardware/samsung_ril",
+    "branch": "lineage-15.1"
+  },
+  {
+    "repository": "LineageOS/android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings",
+    "branch": "lineage-15.1"
+  }
+]

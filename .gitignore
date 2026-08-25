@@ -1,0 +1,27 @@
+# Compiled binaries & outputs
+*.pyc
+*.pyo
+*.o
+*.a
+*.so
+*.out
+*.img
+*.zip
+*.tar
+*.tar.md5
+
+# Editor / OS files
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.bak
+*.orig
+*.rej
+.idea/
+.vscode/
+*.iml
+
+# Extracted vendor files
+/vendor/
+/out/

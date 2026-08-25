@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- Device Tree (GitHub Repository) -->
+  <project name="manattylinux/android_device_samsung_kltedcmactive" path="device/samsung/kltedcmactive" remote="github" revision="lineage-15.1" />
+
+  <!-- MSM8974 Samsung Kernel Source -->
+  <project name="LineageOS/android_kernel_samsung_msm8974" path="kernel/samsung/msm8974" remote="github" revision="lineage-15.1" />
+
+  <!-- Samsung Hardware HALs & RIL -->
+  <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-15.1" />
+  <project name="LineageOS/android_hardware_samsung_ril" path="hardware/samsung_ril" remote="github" revision="lineage-15.1" />
+
+  <!-- Proprietary Vendor Blobs -->
+  <project name="TheMuppets/proprietary_vendor_samsung" path="vendor/samsung" remote="github" revision="lineage-15.1" />
+</manifest>

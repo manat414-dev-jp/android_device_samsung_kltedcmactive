@@ -1,0 +1,18 @@
+#
+# TWRP Recovery fstab for Samsung Galaxy S5 Active NTT docomo (SC-02G / kltedcmactive)
+#
+# <mount_point>  <fstype>  <device>                                                <flags>
+/boot            emmc      /dev/block/platform/msm_sdcc.1/by-name/boot             flags=display="Boot";backup=1;flashimg=1
+/recovery        emmc      /dev/block/platform/msm_sdcc.1/by-name/recovery         flags=display="Recovery";backup=1;flashimg=1
+/system          ext4      /dev/block/platform/msm_sdcc.1/by-name/system           flags=display="System";backup=1;wipeingui
+/system_image    emmc      /dev/block/platform/msm_sdcc.1/by-name/system           flags=display="System Image";backup=1;flashimg=1
+/data            ext4      /dev/block/platform/msm_sdcc.1/by-name/userdata         flags=display="Data";encryptable=footer;length=-16384
+/cache           ext4      /dev/block/platform/msm_sdcc.1/by-name/cache            flags=display="Cache";wipeingui
+/efs             ext4      /dev/block/platform/msm_sdcc.1/by-name/efs              flags=display="EFS / IMEI";backup=1
+/modem           emmc      /dev/block/platform/msm_sdcc.1/by-name/modem            flags=display="Baseband / Modem";backup=1;flashimg=1
+/persist         ext4      /dev/block/platform/msm_sdcc.1/by-name/persist          flags=display="Persist";backup=1
+/firmware        vfat      /dev/block/platform/msm_sdcc.1/by-name/apnhlos          flags=display="Firmware";mounttodecrypt
+
+# Removable storage
+/external_sd     auto      /dev/block/mmcblk1p1    /dev/block/mmcblk1              flags=display="MicroSD Card";storage;wipeingui;removable
+/usb-otg         auto      /dev/block/sda1         /dev/block/sda                  flags=display="USB-OTG";storage;wipeingui;removable
