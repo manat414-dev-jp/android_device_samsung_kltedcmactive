@@ -1,0 +1,7 @@
+# Qualcomm MSM8974 Recovery Ueventd
+/dev/kgsl-3d0             0666   system     system
+/dev/ion                  0664   system     system
+/dev/msm_rotator          0660   system     graphics
+/dev/graphics/*           0660   system     graphics
+/dev/input/*              0660   root       input
+/dev/ttyMSM0              0600   bluetooth  bluetooth
