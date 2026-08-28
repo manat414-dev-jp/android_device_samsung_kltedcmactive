@@ -5,6 +5,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Inherit from standard klte-common board config if available
+-include device/samsung/klte-common/BoardConfigCommon.mk
+
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
 TARGET_DEVICE := kltedcmactive
 TARGET_NO_BOOTLOADER := true

@@ -18,12 +18,12 @@ PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SC-02G
 PRODUCT_MANUFACTURER := samsung
 
-# Build fingerprint & properties for NTT docomo Galaxy S5 Active
+# Build fingerprint & properties for NTT docomo Galaxy S5 Active (Final Stock: MMB29M.SC02GOMU2CQK4)
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=kltedcmactive \
     TARGET_DEVICE=kltedcmactive \
-    BUILD_FINGERPRINT="samsung/kltedcmactive/kltedcmactive:6.0.1/MMB29M/SC02GOMU1CPB1:user/release-keys" \
-    PRIVATE_BUILD_DESC="kltedcmactive-user 6.0.1 MMB29M SC02GOMU1CPB1 release-keys"
+    BUILD_FINGERPRINT="samsung/kltedcmactive/kltedcmactive:6.0.1/MMB29M/SC02GOMU2CQK4:user/release-keys" \
+    PRIVATE_BUILD_DESC="kltedcmactive-user 6.0.1 MMB29M SC02GOMU2CQK4 release-keys"
 
 # Set Japanese locale as default for docomo variant and Single-SIM RIL configs
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -1,6 +1,7 @@
 #
 # Samsung Galaxy S5 Active NTT docomo (SC-02G / kltedcmactive)
 # Proprietary vendor blobs list for LineageOS 15.1
+# Stock Target Build: MMB29M.SC02GOMU2CQK4 (Android 6.0.1 Marshmallow Final docomo release)
 #
 
 # Audio

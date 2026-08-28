@@ -5,6 +5,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Inherit from klte-common if building with standard multi-variant tree
+$(call inherit-product-if-exists, device/samsung/klte-common/device.mk)
+
 # Device Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     device/samsung/kltedcmactive/overlay

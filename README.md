@@ -57,12 +57,19 @@ Create `.repo/local_manifests/kltedcmactive.xml`:
   <!-- Device Tree for SC-02G -->
   <project name="manat414-dev-jp/android_device_samsung_kltedcmactive" path="device/samsung/kltedcmactive" remote="github" revision="lineage-15.1" />
 
+  <!-- Samsung klte & msm8974 Common Trees -->
+  <project name="LineageOS/android_device_samsung_klte-common" path="device/samsung/klte-common" remote="github" revision="lineage-15.1" />
+  <project name="LineageOS/android_device_samsung_msm8974-common" path="device/samsung/msm8974-common" remote="github" revision="lineage-15.1" />
+
   <!-- MSM8974 Common Kernel -->
   <project name="LineageOS/android_kernel_samsung_msm8974" path="kernel/samsung/msm8974" remote="github" revision="lineage-15.1" />
 
   <!-- Samsung Hardware & RIL -->
   <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-15.1" />
   <project name="LineageOS/android_hardware_samsung_ril" path="hardware/samsung_ril" remote="github" revision="lineage-15.1" />
+
+  <!-- Samsung Device Settings -->
+  <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" revision="lineage-15.1" />
 
   <!-- Vendor Blobs -->
   <project name="TheMuppets/proprietary_vendor_samsung" path="vendor/samsung" remote="github" revision="lineage-15.1" />
