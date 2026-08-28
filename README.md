@@ -15,7 +15,7 @@ This repository contains the LineageOS 15.1 (Android 8.1.0 Oreo) device tree con
 - **💾 Fits Stock 2.39GB System Partition:** Zero need for dangerous PIT repartitioning; LineageOS 15.1 + OpenGApps 8.1 fits comfortably with over 800MB spare space!
 - **📸 Flawless 16MP Camera HAL1:** Native legacy Samsung Camera HAL support with full ISOCELL 16MP resolution, HDR, 4K video recording, and zero crashing.
 - **🔋 Superior Battery Endurance:** Up to 2-3x better idle & screen-on battery life compared to Android 11+ due to native 32-bit Dalvik/ART optimization without heavy Treble shim overhead.
-- **📶 docomo LTE Band 19/21 & VoLTE:** Fully tuned RIL for Japan NTT docomo network.
+- **📶 docomo LTE Band 1/3/19/21 & VoLTE:** Fully tuned Single-SIM RIL for Japan NTT docomo network.
 - **🔘 Dedicated Orange Active Key:** `GPIO 91` (`key 249 APP_SWITCH`) mapped for instant flashlight, camera shutter, or custom shortcut.
 
 ---
@@ -31,13 +31,13 @@ This repository contains the LineageOS 15.1 (Android 8.1.0 Oreo) device tree con
 | **GPU** | Adreno 330 (578 MHz) |
 | **RAM** | 2 GB LPDDR3 |
 | **Internal Storage** | 16 GB eMMC 5.0 (MicroSD up to 128 GB) |
-| **Display** | 5.1" Super AMOLED FHD (1080 x 1920 pixels, 432 ppi) |
+| **Display** | 5.1" Super AMOLED FHD (1080 x 1920 pixels, 432 ppi, EA8061 DSI) |
 | **Rear Camera** | 16 MP Samsung ISOCELL (S5K2P2XX), f/2.2, 4K UHD video |
 | **Front Camera** | 2.1 MP (S5K6B2), 1080p video |
 | **Battery** | Removable Li-Ion 2800 mAh |
-| **Sensors** | Barometer, Compass, Heart Rate (MAX86900), Gyro, Accel |
-| **NFC / FeliCa** | NXP PN547 with Osaifu-Keitai support |
-| **Buttons** | 3 Mechanical Front Keys + Dedicated Side **Orange Active Key** |
+| **Sensors** | Barometer (LPS25H), Compass (AKM09911), Heart Rate (MAX86900), Gyro/Accel (MPU6500) |
+| **NFC / FeliCa** | NXP PN547 NFC Controller |
+| **Buttons** | 3 Mechanical Front Keys (Home/Back/Recent) + Dedicated Side **Orange Active Key** |
 
 ---
 
@@ -55,7 +55,7 @@ Create `.repo/local_manifests/kltedcmactive.xml`:
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <!-- Device Tree for SC-02G -->
-  <project name="manattylinux/android_device_samsung_kltedcmactive" path="device/samsung/kltedcmactive" remote="github" revision="lineage-15.1" />
+  <project name="manat414-dev-jp/android_device_samsung_kltedcmactive" path="device/samsung/kltedcmactive" remote="github" revision="lineage-15.1" />
 
   <!-- MSM8974 Common Kernel -->
   <project name="LineageOS/android_kernel_samsung_msm8974" path="kernel/samsung/msm8974" remote="github" revision="lineage-15.1" />

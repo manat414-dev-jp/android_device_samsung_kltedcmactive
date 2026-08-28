@@ -1,7 +1,0 @@
-#
-# Samsung SC-02G Physical Keypad Mapping
-#
-key 254   APP_SWITCH        VIRTUAL
-key 158   BACK              VIRTUAL
-key 139   MENU              VIRTUAL
-key 172   HOME              WAKE_DROPPED

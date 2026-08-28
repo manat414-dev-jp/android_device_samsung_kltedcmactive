@@ -33,10 +33,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml
 
 # Keylayout & Physical Hardware Buttons
-# Galaxy S5 Active has physical AppSwitch/Menu, Home, Back, and orange Active Key!
+# Galaxy S5 Active has mechanical click buttons (Home, Back, Recent) and orange Active Key!
 PRODUCT_COPY_FILES += \
     device/samsung/kltedcmactive/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl \
-    device/samsung/kltedcmactive/keylayout/sec_touchkey.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/sec_touchkey.kl \
     device/samsung/kltedcmactive/keylayout/synaptics_rmi4_i2c.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/synaptics_rmi4_i2c.kl
 
 # Audio configuration
@@ -54,15 +53,14 @@ PRODUCT_COPY_FILES += \
     device/samsung/kltedcmactive/configs/media_profiles.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles.xml \
     device/samsung/kltedcmactive/configs/media_codecs.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs.xml
 
-# NFC NXP PN547
+# NFC (NXP PN547)
 PRODUCT_PACKAGES += \
     NfcNci \
     Tag \
     com.android.nfc_extras
 
 PRODUCT_COPY_FILES += \
-    device/samsung/kltedcmactive/configs/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf \
-    device/samsung/kltedcmactive/configs/libnfc-brcm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-brcm.conf
+    device/samsung/kltedcmactive/configs/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
 # Rootdir init scripts
 PRODUCT_PACKAGES += \

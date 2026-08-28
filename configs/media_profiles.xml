@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MediaSettings>
+    <CamcorderProfiles cameraID="0">
+        <!-- 4K UHD 2160p Profile -->
+        <EncoderProfile quality="2160p" fileFormat="mp4" duration="60">
+            <Video codec="h264" bitRate="48000000" width="3840" height="2160" frameRate="30" />
+            <Audio codec="aac" bitRate="156000" sampleRate="48000" channels="2" />
+        </EncoderProfile>
+        <!-- 1080p Profile -->
+        <EncoderProfile quality="1080p" fileFormat="mp4" duration="60">
+            <Video codec="h264" bitRate="20000000" width="1920" height="1080" frameRate="30" />
+            <Audio codec="aac" bitRate="156000" sampleRate="48000" channels="2" />
+        </EncoderProfile>
+        <!-- 720p Profile -->
+        <EncoderProfile quality="720p" fileFormat="mp4" duration="60">
+            <Video codec="h264" bitRate="14000000" width="1280" height="720" frameRate="30" />
+            <Audio codec="aac" bitRate="156000" sampleRate="48000" channels="2" />
+        </EncoderProfile>
+    </CamcorderProfiles>
+</MediaSettings>

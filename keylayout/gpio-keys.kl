@@ -12,10 +12,8 @@ key 172   HOME              WAKE
 key 158   BACK
 key 139   MENU
 key 580   APP_SWITCH
+key 254   APP_SWITCH
 
 # Dedicated Side Orange "Active Key" (Short press & Long press)
 # Linux event 249 -> APP_SWITCH or customizable FAVORITES key
 key 249   APP_SWITCH        WAKE
-# Alternate mapping options:
-# key 249   EXPLORER          WAKE
-# key 249   CAMERA            WAKE

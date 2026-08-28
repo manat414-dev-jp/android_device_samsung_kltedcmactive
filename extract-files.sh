@@ -17,9 +17,15 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 ANDROID_ROOT="$MY_DIR/../../.."
 
-HELPER="$ANDROID_ROOT/tools/extract-utils/extract_utils.sh"
-if [ ! -f "$HELPER" ]; then
-    echo "Unable to find helper script at $HELPER"
+# Look for LineageOS 15.1 extract_utils location first, then fallback to others
+if [ -f "$ANDROID_ROOT/vendor/lineage/build/tools/extract_utils.sh" ]; then
+    HELPER="$ANDROID_ROOT/vendor/lineage/build/tools/extract_utils.sh"
+elif [ -f "$ANDROID_ROOT/tools/extract-utils/extract_utils.sh" ]; then
+    HELPER="$ANDROID_ROOT/tools/extract-utils/extract_utils.sh"
+elif [ -f "$LINEAGE_ROOT/vendor/lineage/build/tools/extract_utils.sh" ]; then
+    HELPER="$LINEAGE_ROOT/vendor/lineage/build/tools/extract_utils.sh"
+else
+    echo "Unable to find helper script at $ANDROID_ROOT/vendor/lineage/build/tools/extract_utils.sh"
     exit 1
 fi
 source "$HELPER"

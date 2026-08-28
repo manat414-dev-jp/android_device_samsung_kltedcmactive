@@ -1,0 +1,6 @@
+#
+# Synaptics RMI4 Touchscreen Key Mapping for SC-02G
+#
+key 158   BACK              VIRTUAL
+key 254   APP_SWITCH        VIRTUAL
+key 172   HOME              VIRTUAL

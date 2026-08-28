@@ -25,14 +25,13 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT="samsung/kltedcmactive/kltedcmactive:6.0.1/MMB29M/SC02GOMU1CPB1:user/release-keys" \
     PRIVATE_BUILD_DESC="kltedcmactive-user 6.0.1 MMB29M SC02GOMU1CPB1 release-keys"
 
-# Set Japanese locale as default for docomo variant and RIL configs
+# Set Japanese locale as default for docomo variant and Single-SIM RIL configs
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.locale=ja-JP \
     ro.telephony.default_network=9 \
     telephony.lteOnGsmDevice=1 \
     ro.ril.telephony.mqanelements=6 \
     ro.telephony.ril_class=SamsungMSM8974RIL \
-    ro.telephony.ril.config=qcomdsds \
     rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so \
     rild.libargs=-d /dev/smd0 \
     persist.radio.add_power_save=1 \

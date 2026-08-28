@@ -80,11 +80,9 @@ vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 
-# NFC / FeliCa (NXP PN547)
+# NFC (NXP PN547)
 vendor/lib/libpn547_fw.so
 vendor/lib/libnfc_nci_jni.so
-vendor/lib/libfelica.so
-vendor/lib/libfelicaclient.so
 
 # Sensors
 vendor/bin/sensorhubservice
