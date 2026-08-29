@@ -5,10 +5,13 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit from device.mk
+# Inherit from standard base telephony product
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit from kltedcmactive device.mk
 $(call inherit-product, device/samsung/kltedcmactive/device.mk)
 
-# Inherit some common LineageOS 15.1 stuff
+# Inherit common LineageOS 15.1 configuration
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Device identifier
