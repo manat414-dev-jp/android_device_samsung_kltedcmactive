@@ -31,7 +31,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_IMAGE_NAME := zImage
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_HEADER_ARCH := arm
-TARGET_KERNEL_CONFIG := lineageos_kltedcmactive_defconfig
+TARGET_KERNEL_CONFIG := lineage_klte_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8974
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/kltedcmactive/mkbootimg.mk
 
@@ -81,6 +81,13 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_SDCARD_ON_DATA := false
+
+# Ramdisk Compression for 16MB partition (SC-02G Limit: 16777216 bytes)
+LZMA_RAMDISK_TARGETS := recovery
+TW_NO_EXFAT_FUSE := true
+TW_EXCLUDE_SUPERSU := true
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_BASH := true
 
 # Hardware Keys & Buttons (Galaxy S5 Active dedicated physical key & front buttons)
 BOARD_HARDWARE_KEYS := true
