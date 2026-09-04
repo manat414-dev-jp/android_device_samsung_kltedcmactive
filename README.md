@@ -46,7 +46,6 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 lunch twrp_kltedcmactive-eng
-# または lunch omni_kltedcmactive-eng
 mka recoveryimage -j$(nproc --all)
 ```
 

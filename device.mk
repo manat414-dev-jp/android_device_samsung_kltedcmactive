@@ -14,12 +14,11 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PACKAGES += \
     twrp
 
-# Recovery init files & Keylayout for Active hardware buttons
+# Recovery init files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
     $(LOCAL_PATH)/recovery/root/ueventd.qcom.rc:root/ueventd.qcom.rc \
-    $(LOCAL_PATH)/recovery/root/etc/twrp.flags:root/etc/twrp.flags \
-    $(LOCAL_PATH)/keylayout/gpio-keys.kl:root/etc/gpio-keys.kl
+    $(LOCAL_PATH)/recovery/root/etc/twrp.flags:root/etc/twrp.flags
 
 # Default TWRP Japanese language & Screen settings
 PRODUCT_PROPERTY_OVERRIDES += \
