@@ -28,11 +28,15 @@ BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 dwc3.maximum_speed=high dwc3_msm.prop_chg_detect=Y androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_SEPARATED_DT := true
+BOARD_KERNEL_IMAGE_NAME := zImage
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_HEADER_ARCH := arm
 TARGET_KERNEL_CONFIG := lineageos_kltedcmactive_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8974
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/kltedcmactive/mkbootimg.mk
+
+# Legacy Non-System-As-Root Configuration (SC-02G has dedicated recovery partition)
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 
 # Partition Sizes (SC-02G 16GB eMMC Layout)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 14680064        # 14MB
