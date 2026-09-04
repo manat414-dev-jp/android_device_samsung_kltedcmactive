@@ -33,7 +33,7 @@ repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omn
 ### 2. Clone SC-02G Recovery Device Tree
 ```bash
 mkdir -p device/samsung
-git clone https://github.com/manat414-dev-jp/android_device_samsung_kltedcmactive-twrp.git -b twrp-3.7 device/samsung/kltedcmactive
+git clone https://github.com/manat414-dev-jp/android_device_samsung_kltedcmactive.git -b twrp-3.7 device/samsung/kltedcmactive
 ```
 
 ### 3. Sync Repositories
@@ -45,7 +45,8 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 ```bash
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch omni_kltedcmactive-eng
+lunch twrp_kltedcmactive-eng
+# または lunch omni_kltedcmactive-eng
 mka recoveryimage -j$(nproc --all)
 ```
 
@@ -54,7 +55,7 @@ mka recoveryimage -j$(nproc --all)
 ## 📦 Output Files
 After successful build, find the output files at:
 - **Recovery Image**: `out/target/product/kltedcmactive/recovery.img`
-- **Tar archive for Odin**: `tar -cvf twrp-3.7.1-SC-02G.tar recovery.img`
+- **Tar archive for Odin**: `tar -H ustar -c recovery.img > twrp-3.7.1-SC-02G.tar.md5`
 
 ---
 
@@ -70,3 +71,7 @@ heimdall flash --RECOVERY recovery.img --no-reboot
 ### Method 2: Via Existing TWRP (Flash Image)
 1. Copy `recovery.img` to MicroSD or Internal Storage.
 2. In TWRP, go to **Install > Install Image**, select `recovery.img`, choose **Recovery** partition, and swipe to flash.
+
+### Method 3: Via Odin (Windows PC)
+1. Boot SC-02G into Download Mode (Vol Down + Home + Power).
+2. Connect to PC via USB, open Odin, select `twrp-3.7.1-SC-02G.tar.md5` in the **AP** slot, and click **Start**.

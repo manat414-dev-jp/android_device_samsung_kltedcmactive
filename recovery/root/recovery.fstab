@@ -1,19 +1,11 @@
+# Android fstab file for Samsung Galaxy S5 Active (SC-02G / kltedcmactive)
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 #
-# TWRP fstab for Samsung Galaxy S5 Active (SC-02G / kltedcmactive)
-# eMMC Partition Mount Definitions
-#
+# <src>                                                 <mnt_point>     <type>    <mnt_flags and options>                                                     <fs_mgr_flags>
 
-/boot            emmc      /dev/block/platform/msm_sdcc.1/by-name/boot             flags=display="Boot";backup=1;flashimg=1
-/recovery        emmc      /dev/block/platform/msm_sdcc.1/by-name/recovery         flags=display="Recovery";backup=1;flashimg=1
-/system          ext4      /dev/block/platform/msm_sdcc.1/by-name/system           flags=display="System";backup=1;wipeingui
-/system_image    emmc      /dev/block/platform/msm_sdcc.1/by-name/system           flags=display="System Image";backup=1;flashimg=1
-/data            ext4      /dev/block/platform/msm_sdcc.1/by-name/userdata         flags=display="Data";encryptable=footer;length=-16384
-/cache           ext4      /dev/block/platform/msm_sdcc.1/by-name/cache            flags=display="Cache";wipeingui
-/efs             ext4      /dev/block/platform/msm_sdcc.1/by-name/efs              flags=display="EFS / IMEI";backup=1
-/modem           emmc      /dev/block/platform/msm_sdcc.1/by-name/modem            flags=display="Baseband / Modem";backup=1;flashimg=1
-/persist         ext4      /dev/block/platform/msm_sdcc.1/by-name/persist          flags=display="Persist";backup=1
-/firmware        vfat      /dev/block/platform/msm_sdcc.1/by-name/apnhlos          flags=display="Firmware";mounttodecrypt
-
-# Removable Storages (SD Card & USB-OTG)
-/external_sd     auto      /dev/block/mmcblk1p1    /dev/block/mmcblk1              flags=display="MicroSD Card";storage;wipeingui;removable
-/usb-otg         auto      /dev/block/sda1         /dev/block/sda                  flags=display="USB-OTG";storage;wipeingui;removable
+/dev/block/platform/msm_sdcc.1/by-name/boot            /boot           emmc      defaults                                                                    defaults
+/dev/block/platform/msm_sdcc.1/by-name/recovery        /recovery       emmc      defaults                                                                    defaults
+/dev/block/platform/msm_sdcc.1/by-name/system          /system         ext4      ro,errors=panic                                                             wait
+/dev/block/platform/msm_sdcc.1/by-name/userdata        /data           ext4      noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc,errors=panic    wait,check,encryptable=footer,length=-16384
+/dev/block/platform/msm_sdcc.1/by-name/cache           /cache          ext4      noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc,errors=panic    wait,check

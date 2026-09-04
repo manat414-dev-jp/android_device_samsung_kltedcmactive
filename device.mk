@@ -4,14 +4,22 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+LOCAL_PATH := device/samsung/kltedcmactive
+
 # Display & Density (1080x1920 Full HD / 480dpi)
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# Recovery init files
+# TWRP Package
+PRODUCT_PACKAGES += \
+    twrp
+
+# Recovery init files & Keylayout for Active hardware buttons
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
-    $(LOCAL_PATH)/recovery/root/ueventd.qcom.rc:root/ueventd.qcom.rc
+    $(LOCAL_PATH)/recovery/root/ueventd.qcom.rc:root/ueventd.qcom.rc \
+    $(LOCAL_PATH)/recovery/root/etc/twrp.flags:root/etc/twrp.flags \
+    $(LOCAL_PATH)/keylayout/gpio-keys.kl:root/etc/gpio-keys.kl
 
 # Default TWRP Japanese language & Screen settings
 PRODUCT_PROPERTY_OVERRIDES += \

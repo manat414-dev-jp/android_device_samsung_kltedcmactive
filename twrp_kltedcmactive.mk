@@ -4,9 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit common Omni / TWRP recovery configuration
-$(call inherit-product-if-exists, vendor/omni/config/common.mk)
+# Inherit common TWRP / Omni recovery configuration
 $(call inherit-product-if-exists, vendor/twrp/config/common.mk)
+$(call inherit-product-if-exists, vendor/omni/config/common.mk)
 
 # Inherit from standard base product
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
@@ -15,7 +15,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, device/samsung/kltedcmactive/device.mk)
 
 PRODUCT_DEVICE := kltedcmactive
-PRODUCT_NAME := omni_kltedcmactive
+PRODUCT_NAME := twrp_kltedcmactive
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SC-02G
 PRODUCT_MANUFACTURER := samsung

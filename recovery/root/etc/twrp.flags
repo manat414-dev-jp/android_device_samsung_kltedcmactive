@@ -1,14 +1,15 @@
 # TWRP 3.7+ GUI Partition flags for SC-02G (kltedcmactive)
+# Supplements /etc/recovery.fstab with GUI labels, backup options, and extra partitions
+
 /boot           emmc    /dev/block/platform/msm_sdcc.1/by-name/boot          flags=display="Boot";backup=1;flashimg=1
 /recovery       emmc    /dev/block/platform/msm_sdcc.1/by-name/recovery      flags=display="Recovery";backup=1;flashimg=1
-/system         ext4    /dev/block/platform/msm_sdcc.1/by-name/system        flags=display="System";backup=1;wipeingui
 /system_image   emmc    /dev/block/platform/msm_sdcc.1/by-name/system        flags=display="System Image";backup=1;flashimg=1
-/data           ext4    /dev/block/platform/msm_sdcc.1/by-name/userdata      flags=display="Data (User Data)";encryptable=footer;length=-16384
-/cache          ext4    /dev/block/platform/msm_sdcc.1/by-name/cache         flags=display="Cache";wipeingui
-/efs            ext4    /dev/block/platform/msm_sdcc.1/by-name/efs           flags=display="EFS / IMEI (通信ID)";backup=1
-/modem          emmc    /dev/block/platform/msm_sdcc.1/by-name/modem         flags=display="Modem / Baseband";backup=1;flashimg=1
-/persist        ext4    /dev/block/platform/msm_sdcc.1/by-name/persist       flags=display="Persist (Calibrations)";backup=1
+/efs            ext4    /dev/block/platform/msm_sdcc.1/by-name/efs           flags=display="EFS / IMEI (通信識別)";backup=1
+/modem          emmc    /dev/block/platform/msm_sdcc.1/by-name/modem         flags=display="Modem / Baseband (モデム)";backup=1;flashimg=1
+/persist        ext4    /dev/block/platform/msm_sdcc.1/by-name/persist       flags=display="Persist (センサー校正)";backup=1
+/firmware       vfat    /dev/block/platform/msm_sdcc.1/by-name/apnhlos       flags=display="Firmware (NON-HLOS)";mounttodecrypt
+/hidden         ext4    /dev/block/platform/msm_sdcc.1/by-name/hidden        flags=display="Hidden / Preload (ドコモ領域 ~500MB)";backup=1;wipeingui
 
-# External
+# Removable Storages (MicroSD & USB-OTG)
 /external_sd    auto    /dev/block/mmcblk1p1    /dev/block/mmcblk1           flags=display="MicroSD Card";storage;wipeingui;removable
 /usb-otg        auto    /dev/block/sda1         /dev/block/sda               flags=display="USB-OTG";storage;wipeingui;removable

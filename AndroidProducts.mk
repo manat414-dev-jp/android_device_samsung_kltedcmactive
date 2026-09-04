@@ -5,8 +5,11 @@
 #
 
 PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/twrp_kltedcmactive.mk \
     $(LOCAL_DIR)/omni_kltedcmactive.mk
 
 COMMON_LUNCH_CHOICES := \
+    twrp_kltedcmactive-eng \
+    twrp_kltedcmactive-userdebug \
     omni_kltedcmactive-eng \
     omni_kltedcmactive-userdebug
