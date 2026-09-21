@@ -1,0 +1,133 @@
+#
+# Proprietary blobs for Samsung Galaxy S5 Active NTT Docomo (SC-02G / kltedcmactive)
+# Extracted from Android 6.0.1 Marshmallow Stock ROM (SC02GOMU2CQB1)
+#
+
+# Audio
+vendor/lib/libOmxAacDec.so
+vendor/lib/libOmxAmrwbplusDec.so
+vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOmxWmaDec.so
+
+# Camera - Chromatix & Tuning
+vendor/lib/C16QL_libchromatix_s5k2p2xx_common.so
+vendor/lib/C16QL_libchromatix_s5k2p2xx_common_res0.so
+vendor/lib/C16QL_libchromatix_s5k2p2xx_common_res1.so
+vendor/lib/C16QL_libchromatix_s5k2p2xx_common_res2.so
+vendor/lib/C16QL_libchromatix_s5k2p2xx_common_res3.so
+vendor/lib/F16QL_libchromatix_s5k2p2xx_common.so
+vendor/lib/F16QL_libchromatix_s5k2p2xx_common_res0.so
+vendor/lib/F16QL_libchromatix_s5k2p2xx_common_res1.so
+vendor/lib/F16QL_libchromatix_s5k2p2xx_common_res2.so
+vendor/lib/F16QL_libchromatix_s5k2p2xx_common_res3.so
+vendor/lib/F16QS_libchromatix_imx240_common.so
+vendor/lib/F16QS_libchromatix_imx240_common_res0.so
+vendor/lib/F16QS_libchromatix_imx240_common_res1.so
+vendor/lib/F16QS_libchromatix_imx240_common_res2.so
+vendor/lib/F16QS_libchromatix_imx240_common_res3.so
+vendor/lib/libchromatix_s5k8b1yx_common.so
+vendor/lib/libchromatix_s5k8b1yx_pip.so
+vendor/lib/libchromatix_s5k8b1yx_preview.so
+vendor/lib/libchromatix_s5k8b1yx_smart_stay.so
+vendor/lib/libchromatix_s5k8b1yx_snapshot.so
+vendor/lib/libchromatix_s5k8b1yx_video.so
+vendor/lib/libchromatix_s5k8b1yx_vt_beauty.so
+vendor/lib/libchromatix_s5k8b1yx_vt_hd.so
+vendor/lib/libchromatix_s5k8b1yx_vt.so
+vendor/lib/libchromatix_s5k8b1yx_zslshot.so
+
+# Camera - Firmware & Modules
+cameradata/C16QL_Isp0_s5k2p2xx.bin:vendor/cameradata/C16QL_Isp0_s5k2p2xx.bin
+cameradata/C16QL_Isp1_s5k2p2xx.bin:vendor/cameradata/C16QL_Isp1_s5k2p2xx.bin
+cameradata/F16QL_Isp0_s5k2p2xx.bin:vendor/cameradata/F16QL_Isp0_s5k2p2xx.bin
+cameradata/F16QL_Isp1_s5k2p2xx.bin:vendor/cameradata/F16QL_Isp1_s5k2p2xx.bin
+cameradata/F16QS_Isp0_imx240.bin:vendor/cameradata/F16QS_Isp0_imx240.bin
+cameradata/F16QS_Isp1_imx240.bin:vendor/cameradata/F16QS_Isp1_imx240.bin
+cameradata/Master0.bin:vendor/cameradata/Master0.bin
+cameradata/Master1.bin:vendor/cameradata/Master1.bin
+cameradata/cal_data_LSCmaster.bin:vendor/cameradata/cal_data_LSCmaster.bin
+cameradata/datapattern_420sp.yuv:vendor/cameradata/datapattern_420sp.yuv
+cameradata/datapattern_front_420sp.yuv:vendor/cameradata/datapattern_front_420sp.yuv
+etc/C16QL_s5k2p2xx_module_info.xml:vendor/etc/C16QL_s5k2p2xx_module_info.xml
+etc/F16QL_s5k2p2xx_module_info.xml:vendor/etc/F16QL_s5k2p2xx_module_info.xml
+etc/F16QS_imx240_module_info.xml:vendor/etc/F16QS_imx240_module_info.xml
+etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
+etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
+etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
+
+# CPU & Thermal
+bin/mpdecision:vendor/bin/mpdecision
+bin/thermal-engine:vendor/bin/thermal-engine
+vendor/lib/libthermalclient.so
+vendor/lib/libthermalioctl.so
+
+# DRM / QSEECom
+bin/qseecomd:vendor/bin/qseecomd
+vendor/lib/libdrmdiag.so
+vendor/lib/libdrmfs.so
+vendor/lib/libdrmtime.so
+vendor/lib/libQSEEComAPI.so
+vendor/lib/librpmb.so
+vendor/lib/libssd.so
+
+# GPS - Marshmallow Qualcomm GPS stack (libloc_ds_api.so excluded)
+vendor/lib/libloc_api_v02.so
+vendor/lib/hw/flp.default.so
+vendor/lib/libflp.so
+vendor/lib/libgeofence.so
+vendor/lib/libizat_core.so
+vendor/lib/liblbs_core.so
+
+# NFC / FeliCa - NTT Docomo Sony CXD224x
+vendor/lib/libfelica.so
+vendor/lib/libfelicaclient.so
+vendor/lib/libfelica_mfc.so
+vendor/lib/libsony_felica.so
+vendor/etc/felica/common.cfg
+vendor/etc/felica/mfc.cfg
+
+# Qualcomm Framework / Services
+lib/libmdmdetect.so:vendor/lib/libmdmdetect.so
+lib/libperipheral_client.so:vendor/lib/libperipheral_client.so
+vendor/lib/libconfigdb.so
+vendor/lib/libdiag.so
+vendor/lib/libdsi_netctrl.so
+vendor/lib/libdsutils.so
+vendor/lib/libidl.so
+vendor/lib/libnetmgr.so
+vendor/lib/libqcci_legacy.so
+vendor/lib/libqdi.so
+vendor/lib/libqmi.so
+vendor/lib/libqmi_cci.so
+vendor/lib/libqmi_client_qmux.so
+vendor/lib/libqmi_common_so.so
+vendor/lib/libqmi_csi.so
+vendor/lib/libqmi_encdec.so
+vendor/lib/libqmiservices.so
+
+# Radio / RIL - NTT Docomo Marshmallow Stack
+bin/efsks:vendor/bin/efsks
+bin/ks:vendor/bin/ks
+bin/qcks:vendor/bin/qcks
+bin/qmuxd:vendor/bin/qmuxd
+bin/rfs_access:vendor/bin/rfs_access
+bin/rmt_storage:vendor/bin/rmt_storage
+lib/libsec-ril.so:vendor/lib/libsec-ril.so
+vendor/lib/libril-qcril-hook-oem.so
+
+# Sensors
+lib/hw/sensors.msm8974.so:vendor/lib/hw/sensors.vendor.msm8974.so
+lib/libhr.so:vendor/lib/libhr.so
+
+# Time services
+bin/time_daemon:vendor/bin/time_daemon
+vendor/lib/libTimeService.so
+
+# Wi-Fi & Bluetooth Firmware
+etc/wifi/bcmdhd_apsta.bin:vendor/etc/wifi/bcmdhd_apsta.bin
+etc/wifi/bcmdhd_ibss.bin:vendor/etc/wifi/bcmdhd_ibss.bin
+etc/wifi/bcmdhd_mfg.bin:vendor/etc/wifi/bcmdhd_mfg.bin
+etc/wifi/bcmdhd_sta.bin:vendor/etc/wifi/bcmdhd_sta.bin
+etc/wifi/nvram_mfg.txt:vendor/etc/wifi/nvram_mfg.txt
+etc/wifi/nvram_net.txt:vendor/etc/wifi/nvram_net.txt

@@ -1,0 +1,15 @@
+# Copyright (c) 2012, The Linux Foundation. All rights reserved.
+# Samsung Galaxy S5 Active (SC-02G / kltedcmactive) Key Layout
+#
+# Hardware scan codes defined in kernel DTS (msm8974pro-ac-sec-kactiveltedcm-r02.dtsi)
+#
+
+key 114   VOLUME_DOWN
+key 115   VOLUME_UP
+key 116   POWER
+key 172   HOME          WAKE
+key 158   BACK
+key 254   APP_SWITCH
+
+# Active Key (便利キー / hot_key connected to GPIO 144)
+key 252   EXPLORER      WAKE
