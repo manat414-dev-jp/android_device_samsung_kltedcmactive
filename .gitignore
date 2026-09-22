@@ -1,0 +1,16 @@
+# Build outputs & binaries (Strictly Open Source - No Blobs)
+*.img
+*.tar
+*.zip
+*.bin
+*.so
+*.o
+*.a
+*.dex
+*.apk
+*.jar
+
+# Local caches & Ninja files
+out/
+.ninja*
+.repo/
