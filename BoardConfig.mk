@@ -27,13 +27,8 @@ TARGET_KERNEL_CONFIG := lineage_klteactivexx_defconfig
 TARGET_INIT_VENDOR_LIB := libinit_msm8974
 TARGET_LIBINIT_MSM8974_DEFINES_FILE := device/samsung/kltedcmactive/init/init_klte.cpp
 
-# NFC - NTT Docomo Sony CXD224x
--include $(COMMON_PATH)/nfc/sony/board.mk
-ifeq ($(BOARD_NFC_CHIPSET),)
-BOARD_NFC_CHIPSET := sony
-BOARD_NFC_HAL_SUFFIX := msm8974
-DEVICE_MANIFEST_FILE += $(COMMON_PATH)/nfc/manifest-hwbinder.xml
-endif
+# NFC - NTT Docomo Sony CXD224x (uses klte-common generic NFC board config)
+include $(COMMON_PATH)/nfc/board.mk
 
 # Radio/RIL
 include $(COMMON_PATH)/radio/single/board.mk

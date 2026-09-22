@@ -15,11 +15,11 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+# common klte (must be first so COMMON_PATH is defined)
+$(call inherit-product, device/samsung/klte-common/klte.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/samsung/kltedcmactive/kltedcmactive-vendor.mk)
-$(call inherit-product-if-exists, vendor/samsung/klte-common/klte-common-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -28,18 +28,14 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
 
-# NFC - NTT Docomo Sony CXD224x
--include $(COMMON_PATH)/nfc/sony/product.mk
-TARGET_ENABLE_SMARTCARD_SERVICE := true
-PRODUCT_PACKAGES += \
-    org.simalliance.openmobileapi.xml \
-    org.simalliance.openmobileapi
+# NFC - NTT Docomo Sony CXD224x (CXD2235A)
+$(call inherit-product, device/samsung/klte-common/nfc/product.mk)
 
 # Shim libraries for Marshmallow 6.0 Blobs on Oreo 8.1
+# Note: libshim_camera is already included by klte-common/klte.mk
 PRODUCT_PACKAGES += \
     libshim_cutils_atomic \
-    libshim_ril \
-    libshim_camera
+    libshim_ril
 
 # NTT Docomo / SC-02G Specific Properties
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -47,6 +43,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=9 \
     telephony.lteOnGsmDevice=1 \
     rild.libpath=/system/vendor/lib/libsec-ril.so
-
-# common klte
-$(call inherit-product, device/samsung/klte-common/klte.mk)

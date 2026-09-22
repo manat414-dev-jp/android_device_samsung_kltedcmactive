@@ -1,0 +1,7 @@
+[
+  {
+    "repository": "android_device_samsung_klte",
+    "target_path": "device/samsung/klte",
+    "branch": "lineage-15.1"
+  }
+]

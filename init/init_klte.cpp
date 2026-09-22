@@ -42,24 +42,23 @@
 using android::base::GetProperty;
 using android::init::property_set;
 
-void gsm_properties()
-{
-    property_override("rild.libpath", "/system/vendor/lib/libsec-ril.so");
-    property_set("ro.telephony.default_network", "9");
-    property_set("telephony.lteOnGsmDevice", "1");
-}
-
 void init_target_properties()
 {
-    // SC-02G (Galaxy S5 Active NTT Docomo) Marshmallow Stock Properties
-    property_override("ro.build.fingerprint", "samsung/SC-02G/SC-02G:6.0.1/MMB29M/SC02GOMU2CQB1:user/release-keys");
-    property_override("ro.build.description", "kltedcmactive-user 6.0.1 MMB29M SC02GOMU2CQB1 release-keys");
-    property_override_dual("ro.product.model", "ro.vendor.product.model", "SC-02G");
-    property_override_dual("ro.product.device", "ro.vendor.product.device", "kltedcmactive");
-    property_override_dual("ro.product.name", "ro.vendor.product.name", "SC-02G");
-    property_override("ro.ril.enable.dcm.feature", "1");
+    // SC-02G (Galaxy S5 Active NTT Docomo)
+    // Stock fingerprint based on Marshmallow 6.0.1 (MMB29M)
+    property_override("ro.build.fingerprint",
+        "samsung/SC-02G/SC-02G:6.0.1/MMB29M/SC02GOMU2CQB1:user/release-keys");
+    property_override("ro.build.description",
+        "kltedcmactive-user 6.0.1 MMB29M SC02GOMU2CQB1 release-keys");
+    property_override_dual("ro.product.model",    "ro.vendor.product.model",  "SC-02G");
+    property_override_dual("ro.product.device",   "ro.vendor.product.device", "kltedcmactive");
+    property_override_dual("ro.product.name",     "ro.vendor.product.name",   "SC-02G");
 
-    gsm_properties();
+    // NTT Docomo RIL
+    property_override("rild.libpath", "/system/vendor/lib/libsec-ril.so");
+    property_override("ro.ril.enable.dcm.feature", "1");
+    property_set("ro.telephony.default_network", "9");
+    property_set("telephony.lteOnGsmDevice", "1");
 
     std::string bootloader = GetProperty("ro.bootloader", "");
     std::string device = GetProperty("ro.product.device", "");

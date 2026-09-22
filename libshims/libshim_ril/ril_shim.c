@@ -14,16 +14,25 @@
  * limitations under the License.
  */
 
+/*
+ * Shim for missing binder/RIL symbols referenced by Marshmallow libsec-ril.so
+ * on Android 8.1 (Oreo).
+ *
+ * IPCThreadState::joinThreadPool() — The Marshmallow RIL daemon expects to call
+ * joinThreadPool() to keep the Binder thread alive. On Oreo, the symbol may
+ * not be directly exported via the exact mangled name used in the old binary.
+ * This stub keeps the linker happy; the actual Binder thread management is
+ * handled by the framework's libbinder.so at runtime.
+ */
+
 #include <stdint.h>
 #include <stdlib.h>
 
-// IPCThreadState::joinThreadPool symbol for Marshmallow libsec-ril.so
+/*
+ * _ZN7android14IPCThreadState14joinThreadPoolEb
+ * = android::IPCThreadState::joinThreadPool(bool)
+ */
 void _ZN7android14IPCThreadState14joinThreadPoolEb(int dummy) {
     (void)dummy;
 }
 
-// Parcel::writeString16 symbol stub
-int _ZN7android6Parcel13writeString16EPKDs(void *this, const uint16_t *str) {
-    if (!str) return -1;
-    return 0;
-}
