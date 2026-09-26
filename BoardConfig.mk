@@ -22,6 +22,8 @@ TARGET_OTA_ASSERT_DEVICE := SC-02G,kltedcmactive,klteactive,klte
 
 # Kernel
 TARGET_KERNEL_CONFIG := lineage_klteactivexx_defconfig
+KERNEL_CONFIG_OVERRIDE := CONFIG_SEC_LOCALE_JPN=y CONFIG_MACH_KLTE_JPN=y
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive user_debug=23 msm_rtb.filter=0x37 ehci-hcd.park=3
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm8974
