@@ -29,6 +29,10 @@ BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom androidboot.bootd
 TARGET_INIT_VENDOR_LIB := libinit_msm8974
 TARGET_LIBINIT_MSM8974_DEFINES_FILE := device/samsung/kltedcmactive/init/init_klte.cpp
 
+# Dexpreopt
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+USE_DEX2OAT_DEBUG := false
+
 # NFC - NTT Docomo Sony CXD224x (uses klte-common generic NFC board config)
 include $(COMMON_PATH)/nfc/board.mk
 
