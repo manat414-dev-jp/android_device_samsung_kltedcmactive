@@ -34,7 +34,7 @@ WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
 USE_DEX2OAT_DEBUG := false
 
 # NFC - NTT Docomo Sony CXD224x (uses klte-common generic NFC board config)
-include $(COMMON_PATH)/nfc/board.mk
+# include $(COMMON_PATH)/nfc/board.mk
 
 # Radio/RIL
 include $(COMMON_PATH)/radio/single/board.mk

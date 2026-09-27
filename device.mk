@@ -33,7 +33,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
 
 # NFC - NTT Docomo Sony CXD224x (CXD2235A)
-$(call inherit-product, device/samsung/klte-common/nfc/product.mk)
+# $(call inherit-product, device/samsung/klte-common/nfc/product.mk)
 
 # Shim libraries for Marshmallow 6.0 Blobs on Oreo 8.1
 # Note: libshim_camera is already included by klte-common/klte.mk
