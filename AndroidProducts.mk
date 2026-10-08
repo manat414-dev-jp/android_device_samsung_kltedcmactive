@@ -16,9 +16,13 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/crdroid_kltedcmactive.mk
+    $(LOCAL_DIR)/crdroid_kltedcmactive.mk \
+    $(LOCAL_DIR)/lineage_kltedcmactive.mk
 
 COMMON_LUNCH_CHOICES := \
     crdroid_kltedcmactive-user \
     crdroid_kltedcmactive-userdebug \
-    crdroid_kltedcmactive-eng
+    crdroid_kltedcmactive-eng \
+    lineage_kltedcmactive-user \
+    lineage_kltedcmactive-userdebug \
+    lineage_kltedcmactive-eng

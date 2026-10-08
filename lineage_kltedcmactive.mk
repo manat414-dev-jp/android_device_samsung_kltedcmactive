@@ -1,7 +1,6 @@
 #
 # Copyright (C) 2014-2016 The CyanogenMod Project
 # Copyright (C) 2017-2022 The LineageOS Project
-# Copyright (C) 2022 crDroid Android Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,15 +15,14 @@
 # limitations under the License.
 #
 
-# Inherit some common crDroid configuration.
+# Inherit some common LineageOS / crDroid stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit device configurations
 $(call inherit-product, device/samsung/kltedcmactive/full_kltedcmactive.mk)
 
-LINEAGE_BUILD := kltedcmactive
 PRODUCT_DEVICE := kltedcmactive
-PRODUCT_NAME := crdroid_kltedcmactive
+PRODUCT_NAME := lineage_kltedcmactive
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := SC-02G
