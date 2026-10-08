@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The LineageOS Project
+# Copyright (C) 2020 The CyanogenMod Project
 # Copyright (C) 2022 crDroid Android Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +15,15 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/crdroid_kltedcmactive.mk
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-COMMON_LUNCH_CHOICES := \
-    crdroid_kltedcmactive-user \
-    crdroid_kltedcmactive-userdebug \
-    crdroid_kltedcmactive-eng
+# Inherit from kltedcmactive device
+$(call inherit-product, device/samsung/kltedcmactive/kltedcmactive.mk)
+
+# Set those variables here to overwrite the inherited values.
+PRODUCT_NAME := full_kltedcmactive
+PRODUCT_DEVICE := kltedcmactive
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := SC-02G

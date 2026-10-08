@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The LineageOS Project
+# Copyright (C) 2022 The LineageOS Project
 # Copyright (C) 2022 crDroid Android Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +15,9 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/crdroid_kltedcmactive.mk
-
-COMMON_LUNCH_CHOICES := \
-    crdroid_kltedcmactive-user \
-    crdroid_kltedcmactive-userdebug \
-    crdroid_kltedcmactive-eng
+# Radio
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.aosp_usr_pref_sel=true \
+    persist.sys.fflag.override.settings_provider_model=false \
+    persist.vendor.radio.aosp_usr_pref_sel=true \
+    ro.telephony.default_network=9

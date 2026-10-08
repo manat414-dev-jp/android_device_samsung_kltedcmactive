@@ -2,7 +2,8 @@
 <!--
 /*
 ** Copyright 2011, The Android Open Source Project
-** Copyright 2018, The LineageOS Project
+** Copyright 2020-2022, The LineageOS Project
+** Copyright 2022, crDroid Android Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -19,9 +20,52 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- The RadioAccessFamilies supported by the device (LTE|GSM|WCDMA) -->
+    <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support. -->
+    <integer-array name="config_autoBrightnessLevels">
+        <item>2</item>
+        <item>7</item>
+        <item>15</item>
+        <item>50</item>
+        <item>100</item>
+        <item>200</item>
+        <item>400</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>30000</item>
+    </integer-array>
+
+    <!-- Array of output values for LCD backlight corresponding to the LUX values -->
+    <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>13</item>   <!-- 0-2 -->
+        <item>25</item>   <!-- 3-7 -->
+        <item>32</item>   <!-- 5-15 -->
+        <item>41</item>   <!-- 15-50 -->
+        <item>52</item>   <!-- 50-100 -->
+        <item>62</item>   <!-- 100-200 -->
+        <item>69</item>   <!-- 200-400 -->
+        <item>78</item>   <!-- 400-1000 -->
+        <item>88</item>   <!-- 1000-2000 -->
+        <item>134</item>  <!-- 2000-3000 -->
+        <item>178</item>  <!-- 3000-5000 -->
+        <item>225</item>  <!-- 5000-10000 -->
+        <item>255</item>  <!-- 10000-30000 -->
+        <item>255</item> <!-- 30000+ -->
+    </integer-array>
+
+    <!-- Minimum screen brightness allowed by the power manager. -->
+    <integer name="config_screenBrightnessDim">2</integer>
+
+    <!-- Minimum screen brightness setting allowed by the power manager. -->
+    <integer name="config_screenBrightnessSettingMinimum">2</integer>
+
+    <!-- RadioAccessFamilies supported by device -->
     <string translatable="false" name="config_radio_access_family">LTE|GSM|WCDMA</string>
 
-    <!-- Galaxy S5 Active has physical navigation keys, no on-screen navbar by default -->
-    <bool name="config_showNavigationBar">false</bool>
+    <!-- Hardware keys configuration (Home=1, Back=2, Menu=4, AppSwitch=16) -->
+    <!-- Home (1) + Back (2) + AppSwitch (16) = 19 (0x13) -->
+    <integer name="config_deviceHardwareKeys">19</integer>
+    <integer name="config_deviceHardwareWakeKeys">1</integer>
 </resources>

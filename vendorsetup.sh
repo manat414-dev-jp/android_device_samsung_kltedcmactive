@@ -1,3 +1,0 @@
-add_lunch_combo lineage_kltedcmactive-userdebug
-add_lunch_combo lineage_kltedcmactive-user
-add_lunch_combo lineage_kltedcmactive-eng

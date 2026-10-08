@@ -1,6 +1,7 @@
 #
 # Copyright (C) 2014-2016 The CyanogenMod Project
-# Copyright (C) 2017-2018 The LineageOS Project
+# Copyright (C) 2021-2022 The LineageOS Project
+# Copyright (C) 2022 crDroid Android Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,38 +16,44 @@
 # limitations under the License.
 #
 
-# inherit from common klte
-include device/samsung/klte-common/BoardConfigCommon.mk
+# Inherit from common msm8974
+include device/samsung/msm8974-common/BoardConfig.mk
 
-TARGET_OTA_ASSERT_DEVICE := SC-02G,kltedcmactive,klteactive,klte
+DEVICE_PATH := device/samsung/kltedcmactive
+
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+BOARD_CUSTOM_BT_CONFIG := $(DEVICE_PATH)/bluetooth/vnd_kltedcmactive.txt
+BOARD_HAVE_SAMSUNG_BLUETOOTH := true
+
+# Build Fingerprint (SC-02G Stock 6.0.1 Marshmallow)
+BUILD_FINGERPRINT := samsung/kltedcmactive/kltedcmactive:6.0.1/MMB29M/SC02GOMU2CQB1:user/release-keys
 
 # Kernel
+# lineage_klteactivexx_defconfig includes CONFIG_SEC_KACTIVE_PROJECT=y,
+# which generates msm8974pro-ac-sec-kactiveltedcm-r02.dtb.
 TARGET_KERNEL_CONFIG := lineage_klteactivexx_defconfig
 
+# SELinux (Permissive for initial bringup verification)
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_msm8974
-TARGET_LIBINIT_MSM8974_DEFINES_FILE := device/samsung/kltedcmactive/init/init_klte.cpp
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_kltedcmactive
+TARGET_RECOVERY_DEVICE_MODULES := libinit_kltedcmactive
 
-# NFC - NTT Docomo Sony CXD224x (uses klte-common generic NFC board config)
-include $(COMMON_PATH)/nfc/board.mk
+# Manifests
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
-# Radio/RIL
-include $(COMMON_PATH)/radio/single/board.mk
+# OTA Assert
+TARGET_OTA_ASSERT_DEVICE := kltedcmactive,SC-02G,sc02g,klteactive,kltedcm,klte
 
-# NTT Docomo SC-02G 16GB PIT (KACTIVE_JPN_DCM.pit) Partition Sizes
-BOARD_BOOTIMAGE_PARTITION_SIZE := 13631488
-BOARD_CACHEIMAGE_PARTITION_SIZE := 524288000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 15728640
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2548039680
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 12442369024 # 12442385408 - 16384
+# Partition Sizes
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2411724800
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 12507380736
 
-# Legacy BLOB Support & Shims for Marshmallow 6.0 Blobs on Oreo 8.1
-TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
-TARGET_LD_SHIM_LIBS += \
-    /system/vendor/lib/libsec-ril.so|libshim_cutils_atomic.so \
-    /system/vendor/lib/libsec-ril.so|libshim_ril.so \
-    /system/vendor/lib/hw/camera.vendor.msm8974.so|libshim_camera.so
+# NFC
+include $(COMMON_PATH)/nfc/pn547/board.mk
 
-# inherit from the proprietary version
+# Inherit from the proprietary version (guarded with -include)
 -include vendor/samsung/kltedcmactive/BoardConfigVendor.mk
--include vendor/samsung/klte-common/BoardConfigVendor.mk
+-include vendor/samsung/msm8974-common/BoardConfigVendor.mk
