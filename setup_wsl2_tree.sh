@@ -28,11 +28,11 @@ cat << 'EOF' > "${MANIFEST_DIR}/roomservice.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote name="khalvat" fetch="https://github.com/Khalvat-M" revision="12.1" />
-  <remote name="linos" fetch="https://github.com/LineageOS" revision="lineage-19.1" />
+  <remote name="crdroid" fetch="https://github.com/crdroidandroid" revision="12.1" />
 
-  <!-- LineageOS -->
-  <project name="android_hardware_samsung" path="hardware/samsung" remote="linos" />
-  <project name="android_hardware_sony_timekeep" path="hardware/sony/timekeep" remote="linos" />
+  <!-- crDroid Hardware -->
+  <project name="android_hardware_samsung" path="hardware/samsung" remote="crdroid" />
+  <project name="android_hardware_sony_timekeep" path="hardware/sony/timekeep" remote="crdroid" />
 
   <!-- Device -->
   <project name="device_samsung_klte" path="device/samsung/klte" remote="khalvat" />
@@ -103,8 +103,6 @@ if [ -d "${CRDROID_ROOT}/vendor/samsung/kltedcmactive" ]; then
     echo "[OK] vendor/samsung/kltedcmactive が配置されています。"
 else
     echo "[NOTICE] vendor/samsung/kltedcmactive は未配置です。"
-    echo "         実機から抽出する場合: cd ${TARGET_DEVICE_DIR} && ./extract-files.sh"
-    echo "         ROM ZIPから抽出する場合: ./extract-files.sh /path/to/rom.zip"
 fi
 
 echo "=================================================="
