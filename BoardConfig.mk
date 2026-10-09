@@ -1,4 +1,4 @@
-﻿#
+#
 # Copyright (C) 2014-2016 The CyanogenMod Project
 # Copyright (C) 2021-2022 The LineageOS Project
 # Copyright (C) 2022 crDroid Android Project
