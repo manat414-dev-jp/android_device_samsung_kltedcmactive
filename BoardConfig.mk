@@ -30,9 +30,11 @@ BOARD_HAVE_SAMSUNG_BLUETOOTH := true
 BUILD_FINGERPRINT := samsung/kltedcmactive/kltedcmactive:6.0.1/MMB29M/SC02GOMU2CQB1:user/release-keys
 
 # Kernel
-# lineage_klteactivexx_defconfig includes CONFIG_SEC_KACTIVE_PROJECT=y,
-# which generates msm8974pro-ac-sec-kactiveltedcm-r02.dtb.
-TARGET_KERNEL_CONFIG := lineage_klteactivexx_defconfig
+# lineage_kltedcmactive_defconfig includes CONFIG_SEC_KACTIVE_PROJECT=y, CONFIG_SEC_LOCALE_JPN=y,
+# and CONFIG_MACH_KACTIVELTE_DCM=y, which generates msm8974pro-ac-sec-kactiveltedcm-r02.dtb.
+TARGET_KERNEL_CONFIG := lineage_kltedcmactive_defconfig
+BOARD_DTBTOOL_ARGS := -2
+BOARD_MKBOOTIMG_ARGS += --second_offset 0x00f00000
 
 # SELinux (Permissive for initial bringup verification)
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
